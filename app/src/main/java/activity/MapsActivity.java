@@ -89,7 +89,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
          public void onSuccess(Location location) {
             if (location != null) {
                currentLocation = location;
-               //setLocation(currentLocation);
                Toast.makeText(getApplicationContext(), currentLocation.getLatitude() + "" + currentLocation.getLongitude(), Toast.LENGTH_SHORT).show();
                SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.myMap);
                assert supportMapFragment != null;
@@ -102,8 +101,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
    public void onMapReady(GoogleMap googleMap) {
       map=googleMap;
       //LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        MyLocation = new LatLng(30.0096878, 31.2910490);
-      //MyLocation = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+       // MyLocation = new LatLng(30.0096878, 31.2910490);
+       MyLocation = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
 
       if(currentlocation==false) {
          destination = new LatLng(shoppingCart.lat, shoppingCart.lng);
